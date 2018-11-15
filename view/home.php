@@ -35,7 +35,7 @@
       </thead>
       <tbody>
         <tr>
-          <td><p class="title_episode">Nom de l'épisode</p></td>
+          <td><p class="title_episode">Nom de l'épisode :</p></td>
         </tr>
         <tr>
           <td><p class="informations_episode">Date de publication :</p></td>
@@ -49,11 +49,46 @@
             quondam peremptum Constantini filium accepimus Crispum.</p>
           </td>
         </tr>
+        <tr>
+          <td><p id="comment" class="commentText"><i class="fa fa-comments commentIcon" aria-hidden="true"></i>Commentaires</p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div style="display: none" class="commentBox">
+              <div class="addComment">
+                <textarea name="name" rows="3" cols="140" placeholder="Ecrivez votre commentaire ..."></textarea>
+              </div>
+              <div class="comment">
+                <p class="autorComment">Mickael Schimpf - 15/11/2018</p>
+                <p class="textComment">Très bon épisode </p>
+              </div>
+            </div>
+          </td>
+        </tr>
       </tbody>
     </table>
 
   </div>
 </div>
+
+<script>
+
+$(document).ready(function() {
+  $("#comment").click(function(){
+  var value = $(".commentBox").is(":visible");
+    if(value == true){
+      $(".commentBox").css("display", "none");
+    }else{
+      $(".commentBox").css("display", "block");
+    }
+  });
+});
+
+
+
+</script>
+
 
 
 <div id="info_autor" class="container-fluid" >

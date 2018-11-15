@@ -1,12 +1,15 @@
 body{
   background-color: #ECECEC !important;
+
 }
 
 p{
   color: black;
 }
 
-
+.colorRed{
+  color: #DA3351;
+}
 
 
 a{
@@ -58,6 +61,40 @@ a{
   margin-bottom: 20px;
 }
 
+.commentIcon{
+  color: #DA3351;
+  margin-right: 5px;
+}
+.commentText{
+  text-align: right;
+  cursor: pointer;
+}
+
+.commentBox{
+  height: 200px;
+  border: 1px solid #ECECEC;
+}
+
+.comment{
+  font-family: 'Archivo Narrow', sans-serif;
+  background: #ECECEC;
+  padding: 10px 20px;
+  margin: -25px 25px;
+}
+.addComment{
+  width: 100%;
+  margin: 30px;
+}
+
+.autorComment{
+  color: #DA3351;
+  font-size: 17px;
+}
+.textComment{
+  margin-left: 20px;
+  margin-top: -5px;
+}
+
 /* Login */
 
 #divLogin{
@@ -97,4 +134,12 @@ a{
   text-transform: uppercase;
   text-align: center;
   margin: 0;
+}
+
+/* Datatable */
+table.dataTable thead th, table.dataTable thead td{
+  border-bottom: 0px !important;
+}
+table.dataTable.no-footer{
+  border-bottom: 0px !important;
 }
