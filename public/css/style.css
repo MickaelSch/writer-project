@@ -21,7 +21,7 @@ a{
   background-repeat: no-repeat;
 }
 
-
+/*  Home */
 
 .title_acc{
   position: absolute;
@@ -43,6 +43,21 @@ a{
   font-style: italic;
 }
 
+#info_autor{
+  background-image: url("../images/bg2_autor.jpeg");
+  /* filter: blur(6px); */
+  height: auto;
+  padding: 60px;
+}
+.autorName{
+  font-family: 'Archivo Narrow', sans-serif;
+  font-size: 30px;
+  text-transform: uppercase;
+  text-align: center;
+  margin: 0;
+  margin-bottom: 20px;
+}
+
 /* Login */
 
 #divLogin{
@@ -54,16 +69,16 @@ a{
   background-color: rgb(255,255,255, 0.5);
 }
 
- #divLogin button{
-   background: #DA3351;
-   color: white;
-   padding: 10px 20px;
-   border-radius: 5px;
-   font-family: 'Archivo Narrow', sans-serif;
-   display: block;
-   margin: 0 auto;
-   margin-top: 75px;
- }
+#divLogin button{
+  background: #DA3351;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-family: 'Archivo Narrow', sans-serif;
+  display: block;
+  margin: 0 auto;
+  margin-top: 75px;
+}
 
 .texteLogin{
   font-family: 'Archivo Narrow', sans-serif;
@@ -71,7 +86,7 @@ a{
   text-align: center;
   color: #DA3351;
   margin-top: 15px;
-    margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 
 /* Section */
@@ -81,4 +96,5 @@ a{
   font-size: 50px;
   text-transform: uppercase;
   text-align: center;
+  margin: 0;
 }

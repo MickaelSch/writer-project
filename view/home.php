@@ -8,11 +8,11 @@
   <div id="divLogin">
     <p class="texteLogin">Connexion à l'espace membre</p>
     <div class="col-md-6">
-    <input class="form-control input-sm" type="text" name="" value="Votre email">
-  </div>
-  <div class="col-md-6">
-    <input class="form-control input-sm" type="text" name="" value="Votre mot de passe">
-  </div>
+      <input class="form-control input-sm" type="text" name="" value="Votre email">
+    </div>
+    <div class="col-md-6">
+      <input class="form-control input-sm" type="text" name="" value="Votre mot de passe">
+    </div>
     <button type="button" name="button">Connexion</button>
   </div>
 
@@ -22,8 +22,9 @@
 <?php $header = ob_get_clean(); ?>
 
 <?php ob_start(); ?>
+
+<div style="padding: 60px 0px;" class="container">
   <h2 class="titleSection">Les épisodes</h2>
-<div style="padding-top: 60px" class="container">
   <div class="col-md-12">
 
     <table id="myTable">
@@ -51,28 +52,42 @@
       </tbody>
     </table>
 
+  </div>
+</div>
 
 
-
-
+<div id="info_autor" class="container-fluid" >
+  <h2 class="titleSection">à propos de l'auteur</h2>
+  <div style="margin-top: 30px;" class="container">
+    <div class="col-md-5">
+      <img style="width: 100%;" src="../public/images/autor.jpeg" alt="">
+    </div>
+    <div class="col-md-6">
+      <h3 class="autorName">Jean Forteroche</h3>
+      <p>Né en 1969 à Rennes, Loïc Le Borgne a été durant 17 ans journaliste dans un quotidien de presse régionale, dans l'ouest de la France.<br>
+        Il vit dans la Sarthe. Marié, père de deux filles, il a écrit plusieurs romans toujours ancrés dans la littérature imaginaire (science-fiction, fantastique, thriller).<br>
+        Ses thèmes de prédilection : l'écologie, les énigmes scientifiques, l'aventure, les voyages. Il a effectué ses études à Rennes,
+        sa ville natale, puis suivi des cursus universitaires en physique et biologie,
+        avant d'obtenir un DEUG d'histoire-géographie et une maîtrise d'information-communication.</p>
+      </div>
 
     </div>
 
-    </div>
+  </div>
 
-    <script>
-    $(document).ready( function () {
-  $('#myTable').DataTable({
-    "pagingType": "simple",
-    "bLengthChange": false,
-    "searching": false,
-    "bInfo" : false,
-    "ordering" : false
-  });
-} );
-    </script>
+  <script>
+  $(document).ready( function () {
+    $('#myTable').DataTable({
+      "pagingType": "simple",
+      "bLengthChange": false,
+      "searching": false,
+      "bInfo" : false,
+      "ordering" : false
+    });
+  } );
+  </script>
 
-    <?php $content = ob_get_clean(); ?>
+  <?php $content = ob_get_clean(); ?>
 
 
-<?php require('./template.php'); ?>
+  <?php require('./template.php'); ?>
