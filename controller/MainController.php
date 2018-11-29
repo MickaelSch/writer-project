@@ -10,6 +10,7 @@ class MainController{
   }
 
   public static function showAdminPage(){
+    $episodes = EpisodeController::getAll();
     require("./view/admin.php");
   }
 

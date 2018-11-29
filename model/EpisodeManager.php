@@ -14,6 +14,16 @@ class EpisodeManager{
 
     }
 
+    public function delete($id){
+
+      $db = $this->dbConnect();
+      $request = $db->prepare("DELETE FROM episode WHERE id = :id ");
+      $request->execute(array(
+        "id" => $id
+      ));
+
+    }
+
     public function getAll(){
 
       $db = $this->dbConnect();

@@ -62,12 +62,38 @@
     <div id="Paris" class="tabcontent">
 
       <div class="col-md-12">
-        <div class="seanceBoxModification">
-          <p>Nom de l'épisode - date de l'épisode</p>
-          <p class="excerptEposide">Sed ut tum ad senem senex de senectute, sic hoc libro ad amicum amicissimus scripsi de amicitia. Tum est Cato locutus, quo erat nemo fere senior temporibus illis, nemo prudentior; nunc Laelius et sapiens (sic enim est habitus) et amicitiae gloria excellens de amicitia loquetur. Tu velim a me animum parumper avertas, Laelium loqui ipsum putes. C. Fannius et Q. Mucius ad socerum veniunt post mortem Africani; ab his sermo oritur, respondet Laelius, cuius tota disputatio est de amicitia, quam legens te ipse cognosces.</p>
-          <p><button type="button" class="buttonEditEpisode"><i class="fa fa-indent" aria-hidden="true"></i> Modifier</button> <button class="buttonEditEpisode" type="button"><i class="fa fa-trash" aria-hidden="true"></i> Supprimer</button></p>
-        </div>
+        <?php
 
+        foreach ($episodes as $episode) {
+
+          ?>
+          <div id="<?php echo $episode["id"]; ?>" class="seanceBoxModification">
+            <table id="myTable">
+              <thead>
+                <tr>
+                  <th> </th>
+                  <th> </th>
+                  <th> </th>
+                  <th> </th>
+                </tr>
+              </thead>
+              <tbody>
+
+                <tr>
+                  <td><p class="title_episode">Episode 1 : <span class="colorRed"><?php echo $episode["title"]; ?></span></p></td>
+                  <td><?php echo substr($episode["text_episode"], 0, 500).' ...';?></td>
+                  <td>
+                    <p><button type="button" class="buttonEditEpisode"><i class="fa fa-indent" aria-hidden="true"></i> Modifier</button> <button onclick="deleteEpisode(<?php echo $episode["id"]; ?>);" class="buttonEditEpisode" type="button"><i class="fa fa-trash" aria-hidden="true"></i> Supprimer</button></p>
+                  </td>
+
+                </tr>
+
+              </tbody>
+            </table>
+          </div>
+          <?php
+        };
+        ?>
       </div>
 
     </div>

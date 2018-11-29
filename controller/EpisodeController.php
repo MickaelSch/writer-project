@@ -21,6 +21,14 @@ class EpisodeController{
     return true;
   }
 
+  public static function delete($data) {
+
+    $episodeManager = new EpisodeManager();
+    $episodeManager->delete($data['id']);
+    return true;
+  }
+
+
   public static function getAll(){
 
     $episodeManager = new EpisodeManager();

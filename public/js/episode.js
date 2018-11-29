@@ -25,3 +25,25 @@ function createEpisode(){
     "text",
   );
 };
+
+function deleteEpisode(id){
+  $.post(
+    "./ajax.php",
+    {
+      action : "Episode:delete",
+      id : id
+    },
+
+    function(data){
+      data = JSON.parse(data);
+      if(data){
+        $("#"+id).css("display", "none").delay(2000);
+        console.log("supp");
+      }else{
+        console.log(" pas supp");
+      }
+
+    },
+    "text",
+  );
+};
