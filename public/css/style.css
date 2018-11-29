@@ -135,6 +135,7 @@ a{
   text-transform: uppercase;
   text-align: center;
   margin: 0;
+  margin-bottom: 20px;
 }
 
 /* administration */
@@ -173,6 +174,15 @@ a{
 }
 
 * {box-sizing: border-box}
+
+.episode_success{
+  display: none;
+  font-weight: bold;
+}
+.episode_error{
+  display: none;
+  font-weight: bold;
+}
 
 /* Style the tab */
 .tab {
@@ -225,4 +235,25 @@ table.dataTable thead th, table.dataTable thead td{
 }
 table.dataTable.no-footer{
   border-bottom: 0px !important;
+}
+
+th
+  {display: none;}
+tr
+  {display: flex; flex-direction: column;}
+td
+{display: flex; flex-direction: column;}
+
+
+/* Mobile */
+
+@media (max-width: 770px) {
+  .tab{
+    float: none;
+    width: 100%;
+  }
+  .tabcontent{
+    width: 100%;
+  }
+
 }

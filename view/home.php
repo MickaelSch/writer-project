@@ -30,7 +30,10 @@
     <table id="myTable">
       <thead>
         <tr>
-          <td></td>
+          <th> </th>
+          <th> </th>
+          <th> </th>
+          <th> </th>
         </tr>
       </thead>
       <tbody>
@@ -41,16 +44,8 @@
           ?>
           <tr>
             <td><p class="title_episode">Episode 1 : <span class="colorRed"><?php echo $episode["title"]; ?></span></p></td>
-          </tr>
-          <tr>
-            <td><p style="padding: 45px;"><?php echo $episode["text_episode"]; ?></p>
-            </td>
-          </tr>
-          <tr>
-            <td><p id="comment" class="commentText"><i class="fa fa-comments commentIcon" aria-hidden="true"></i>Commentaires</p>
-            </td>
-          </tr>
-          <tr>
+            <td style="padding: 10px 80px;"><?php echo $episode["text_episode"]; ?></td>
+            <td><p id="comment" class="commentText"><i class="fa fa-comments commentIcon" aria-hidden="true"></i>Commentaires</p></td>
             <td>
               <div style="display: none" class="commentBox">
                 <div class="addComment">
