@@ -5,20 +5,19 @@ function createEpisode(){
     {
       action : "Episode:create",
       title : $("#title").val(),
-      publication_date : $("#publication_date").val(),
       text_episode : $("#text_episode").val()
     },
 
     function(data){
       data = JSON.parse(data);
       if(data.error){
-        $(".episode_success").css("display", "none");
-        $(".episode_error").css("display", "block");
-        $(".episode_error").html(data.error_message);
+        $(".createSuccess").css("display", "none");
+        $(".createError").css("display", "block");
+        $(".createError").html(data.error_message);
       }else{
-        $(".episode_error").css("display", "none");
-        $(".episode_success").css("display", "block");
-        $(".episode_success").html("L'épisode a bien été enregistré");
+        $(".createError").css("display", "none");
+        $(".createSuccess").css("display", "block");
+        $(".createSuccess").html("L'épisode a bien été enregistré");
       }
 
     },
@@ -46,4 +45,58 @@ function deleteEpisode(id){
     },
     "text",
   );
+};
+
+function updateEpisode(id){
+  tinyMCE.triggerSave();
+  $.post(
+    "./ajax.php",
+    {
+      action : "Episode:update",
+      id : id,
+      title : $("#update_title").val(),
+      text_episode : $("#update_text_episode").val()
+    },
+
+    function(data){
+      data = JSON.parse(data);
+      if(data){
+        $(".updateSuccess").css("display", "block");
+        $(".updateSuccess").html("L'épisode a bien été enregistré");
+      }else{
+        $(".updateError").css("display", "block");
+        $(".createSuccess").html("Une erreur est survenue, veuillez ressayer");
+      }
+
+    },
+    "text",
+  );
+};
+
+function displayUpdateEpisode(id){
+  $("#updateBox").css("display", "block");
+  $.post(
+    "./ajax.php",
+    {
+      action : "Episode:read",
+      id : id
+    },
+
+    function(data){
+      data = JSON.parse(data);
+      if(data){
+        $("#update_title").val(data["title"]);
+        $("#buttonUpdate").click(function(){
+          updateEpisode(data["id"]);
+        })
+        $("#update_id").val(data["id"]);
+        tinyMCE.execCommand('mceInsertContent',false,data["text_episode"]);
+      }else{
+
+      }
+
+    },
+    "text",
+  );
+
 };
