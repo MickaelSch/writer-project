@@ -11,3 +11,14 @@ function paginationEpisodes(id){
 }
 
 paginationEpisodes('#listEpisodes');
+
+$(document).ready(function() {
+  $("#comment").click(function(){
+    var value = $(".commentBox").is(":visible");
+    if(value == true){
+      $(".commentBox").css("display", "none");
+    }else{
+      $(".commentBox").css("display", "block");
+    }
+  });
+});

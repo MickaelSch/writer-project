@@ -1,5 +1,5 @@
 <?php
-class EpisodeManager{
+class EpisodeModel{
 
     public function create($title, $date, $text_episode){
 

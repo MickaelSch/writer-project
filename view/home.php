@@ -84,7 +84,7 @@
 
           ?>
           <tr>
-            <td><p class="title_episode">Episode 1 : <span class="colorRed"><?php echo $episode["title"]; ?></span></p></td>
+            <td><p class="title_episode"><span class="colorRed"><?php echo $episode["title"]; ?></span></p></td>
             <td style="padding: 10px 80px;"><?php echo $episode["text_episode"]; ?></td>
             <td><p id="comment" class="commentText"><i class="fa fa-comments commentIcon" aria-hidden="true"></i>Commentaires</p></td>
             <td>
@@ -108,24 +108,6 @@
 
   </div>
 </div>
-
-<script>
-
-$(document).ready(function() {
-  $("#comment").click(function(){
-    var value = $(".commentBox").is(":visible");
-    if(value == true){
-      $(".commentBox").css("display", "none");
-    }else{
-      $(".commentBox").css("display", "block");
-    }
-  });
-});
-
-
-
-</script>
-
 
 
 <div id="info_autor" class="container-fluid" >

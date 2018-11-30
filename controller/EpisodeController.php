@@ -1,7 +1,7 @@
 <?php
 
 
-require("./model/EpisodeManager.php");
+require("./model/EpisodeModel.php");
 
 
 class EpisodeController{
@@ -18,21 +18,21 @@ class EpisodeController{
       ];
     }
 
-    $episodeManager = new EpisodeManager();
+    $episodeManager = new EpisodeModel();
     $episodeManager->create($data['title'], $date, $data['text_episode']);
     return true;
   }
 
   public static function delete($data) {
 
-    $episodeManager = new EpisodeManager();
+    $episodeManager = new EpisodeModel();
     $episodeManager->delete($data['id']);
     return true;
   }
 
   public static function read($data) {
 
-    $episodeManager = new EpisodeManager();
+    $episodeManager = new EpisodeModel();
     $episode = $episodeManager->getEpisode($data['id']);
     return $episode;
 
@@ -40,7 +40,7 @@ class EpisodeController{
 
   public static function update($data) {
 
-    $episodeManager = new EpisodeManager();
+    $episodeManager = new EpisodeModel();
     $episode = $episodeManager->update($data['id'], $data['title'], $data['text_episode']);
     return $episode;
 
@@ -49,7 +49,7 @@ class EpisodeController{
 
   public static function getAll(){
 
-    $episodeManager = new EpisodeManager();
+    $episodeManager = new EpisodeModel();
     $episodes = $episodeManager->getAll();
     return $episodes;
 
