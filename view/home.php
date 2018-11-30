@@ -149,18 +149,7 @@ $(document).ready(function() {
 
   </div>
 
-  <script>
-  $(document).ready( function () {
-    $('#listEpisodes').DataTable({
-      "pagingType": "simple",
-      "bLengthChange": false,
-      "searching": false,
-      "bInfo" : false,
-      "ordering" : false,
-      "pageLength": 1
-    });
-  } );
-  </script>
+
 
   <?php $content = ob_get_clean(); ?>
 

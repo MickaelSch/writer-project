@@ -35,8 +35,12 @@
 
   <?= $content ?>
 
+  <footer id="footer">
+    <p class="copyright">© 2018 Copyright : Mickael Schimpf</p>
+  </footer>
 
 
+<script src="./public/js/main.js" ></script>
 <script src="./public/js/user.js" ></script>
     </body>
 

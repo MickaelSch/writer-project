@@ -253,6 +253,20 @@ a{
   display: none;
 }
 
+
+/* Footer */
+
+#footer{
+  background: #DA3351;
+  height: 90px;
+}
+.copyright{
+  color: white;
+  text-align: center;
+padding-top: 30px;
+  font-size: 21px;
+}
+
 /* Style the tab */
 .tab {
   float: left;
