@@ -79,8 +79,9 @@ a{
 }
 
 .commentBox{
-  height: 200px;
+  height: auto;
   border: 1px solid #ECECEC;
+  margin-bottom: 40px;
 }
 
 .comment{

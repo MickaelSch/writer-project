@@ -18,10 +18,10 @@
     <p class="textLoginRegistration">Espace membre</p>
     <div class="row">
       <div class="col-md-6">
-        <input class="form-control input-sm" type="text" id="pseudo" placeholder="Votre pseudo">
+        <input class="form-control input-sm" type="text" id="pseudoSignIn" placeholder="Votre pseudo">
       </div>
       <div class="col-md-6">
-        <input class="form-control input-sm" type="text" id="pass" placeholder="Votre mot de passe">
+        <input class="form-control input-sm" type="text" id="passSignIn" placeholder="Votre mot de passe">
       </div>
     </div>
     <button onclick="signIn()" type="button" name="button">Valider</button>
@@ -40,21 +40,21 @@
     <p class="textLoginRegistration">Espace membre</p>
     <div class="row">
       <div class="col-md-6">
-        <input class="form-control input-sm" type="text" id="pseudo" placeholder="Votre pseudo">
+        <input class="form-control input-sm" type="text" id="pseudoSignUp" placeholder="Votre pseudo">
       </div>
       <div class="col-md-6">
-        <input class="form-control input-sm" type="text" id="email" placeholder="Votre email">
+        <input class="form-control input-sm" type="text" id="emailSignUp" placeholder="Votre email">
       </div>
     </div>
     <div style="margin-top: 20px" class="row">
       <div class="col-md-6">
-        <input class="form-control input-sm" type="text" id="pass" placeholder="Votre mot de passe">
+        <input class="form-control input-sm" type="text" id="passSignUp" placeholder="Votre mot de passe">
       </div>
       <div class="col-md-6">
-        <input class="form-control input-sm" type="text" id="passConfirm" placeholder="Confirmer mot de passe">
+        <input class="form-control input-sm" type="text" id="passConfirmSignUp" placeholder="Confirmer mot de passe">
       </div>
     </div>
-    <button onclick="signIn()" type="button" name="button">Valider</button>
+    <button id="signUp" type="button" name="button">Valider</button>
   </div>
 
 
@@ -68,7 +68,7 @@
   <h2 class="titleSection">Les épisodes</h2>
   <div class="col-md-12">
 
-    <table id="listEpisodes">
+    <table id="listEpisodes" style="width: 100%;">
       <thead>
         <tr>
           <th> </th>
