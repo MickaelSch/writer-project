@@ -13,7 +13,7 @@ function paginationEpisodes(id){
 paginationEpisodes('#listEpisodes');
 
 $(document).ready(function() {
-  $("#comment").click(function(){
+  $(".comments").click(function(){
     var value = $(".commentBox").is(":visible");
     if(value == true){
       $(".commentBox").css("display", "none");

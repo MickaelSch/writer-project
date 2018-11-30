@@ -86,7 +86,7 @@
           <tr>
             <td><p class="title_episode"><span class="colorRed"><?php echo $episode["title"]; ?></span></p></td>
             <td style="padding: 10px 80px;"><?php echo $episode["text_episode"]; ?></td>
-            <td><p id="comment" class="commentText"><i class="fa fa-comments commentIcon" aria-hidden="true"></i>Commentaires</p></td>
+            <td><p id="comment" class="commentText comments"><i class="fa fa-comments commentIcon" aria-hidden="true"></i>Commentaires</p></td>
             <td>
               <div style="display: none" class="commentBox">
                 <div class="addComment">
