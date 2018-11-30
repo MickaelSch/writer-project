@@ -37,7 +37,7 @@
 
 
 
-
+<script src="./public/js/user.js" ></script>
     </body>
 
     </html>

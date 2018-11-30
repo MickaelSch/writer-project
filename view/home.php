@@ -5,15 +5,56 @@
     <h1 style="font-size: 50px">Billet simple pour l'Alaska</h1>
   </div>
 
-  <div id="divLogin">
-    <p class="texteLogin">Connexion à l'espace membre</p>
-    <div class="col-md-6">
-      <input class="form-control input-sm" type="text" name="" value="Votre email">
+  <div id="divLogin" class="active">
+    <div style="display: flex">
+
+      <div class="linkUser">
+        <p class="texteLogin login-link">Connexion</p>
+      </div>
+      <div class="linkUser noBorder">
+        <p class="texteLogin registration-link">Inscription</p>
+      </div>
     </div>
-    <div class="col-md-6">
-      <input class="form-control input-sm" type="text" name="" value="Votre mot de passe">
+    <p class="textLoginRegistration">Espace membre</p>
+    <div class="row">
+      <div class="col-md-6">
+        <input class="form-control input-sm" type="text" id="pseudo" placeholder="Votre pseudo">
+      </div>
+      <div class="col-md-6">
+        <input class="form-control input-sm" type="text" id="pass" placeholder="Votre mot de passe">
+      </div>
     </div>
-    <button type="button" name="button">Connexion</button>
+    <button onclick="signIn()" type="button" name="button">Valider</button>
+  </div>
+
+  <div id="divRegistration">
+    <div style="display: flex">
+
+      <div class="linkUser">
+        <p class="texteLogin login-link">Connexion</p>
+      </div>
+      <div class="linkUser noBorder">
+        <p class="texteLogin registration-link">Inscription</p>
+      </div>
+    </div>
+    <p class="textLoginRegistration">Espace membre</p>
+    <div class="row">
+      <div class="col-md-6">
+        <input class="form-control input-sm" type="text" id="pseudo" placeholder="Votre pseudo">
+      </div>
+      <div class="col-md-6">
+        <input class="form-control input-sm" type="text" id="email" placeholder="Votre email">
+      </div>
+    </div>
+    <div style="margin-top: 20px" class="row">
+      <div class="col-md-6">
+        <input class="form-control input-sm" type="text" id="pass" placeholder="Votre mot de passe">
+      </div>
+      <div class="col-md-6">
+        <input class="form-control input-sm" type="text" id="passConfirm" placeholder="Confirmer mot de passe">
+      </div>
+    </div>
+    <button onclick="signIn()" type="button" name="button">Valider</button>
   </div>
 
 
@@ -27,7 +68,7 @@
   <h2 class="titleSection">Les épisodes</h2>
   <div class="col-md-12">
 
-    <table id="myTable">
+    <table id="listEpisodes">
       <thead>
         <tr>
           <th> </th>
@@ -60,7 +101,7 @@
             <?php
           };
           ?>
-          </tr>
+        </tr>
 
       </tbody>
     </table>
@@ -90,16 +131,18 @@ $(document).ready(function() {
 <div id="info_autor" class="container-fluid" >
   <h2 class="titleSection">à propos de l'auteur</h2>
   <div style="margin-top: 30px;" class="container">
-    <div class="col-md-5">
-      <img style="width: 100%;" src="./public/images/autor.jpeg" alt="">
-    </div>
-    <div class="col-md-6">
-      <h3 class="autorName">Jean Forteroche</h3>
-      <p>Né en 1969 à Rennes, Loïc Le Borgne a été durant 17 ans journaliste dans un quotidien de presse régionale, dans l'ouest de la France.<br>
-        Il vit dans la Sarthe. Marié, père de deux filles, il a écrit plusieurs romans toujours ancrés dans la littérature imaginaire (science-fiction, fantastique, thriller).<br>
-        Ses thèmes de prédilection : l'écologie, les énigmes scientifiques, l'aventure, les voyages. Il a effectué ses études à Rennes,
-        sa ville natale, puis suivi des cursus universitaires en physique et biologie,
-        avant d'obtenir un DEUG d'histoire-géographie et une maîtrise d'information-communication.</p>
+    <div class="row">
+      <div class="col-md-5">
+        <img style="width: 100%;" src="./public/images/autor.jpeg" alt="">
+      </div>
+      <div class="col-md-6">
+        <h3 class="autorName">Jean Forteroche</h3>
+        <p>Né en 1969 à Rennes, Loïc Le Borgne a été durant 17 ans journaliste dans un quotidien de presse régionale, dans l'ouest de la France.<br>
+          Il vit dans la Sarthe. Marié, père de deux filles, il a écrit plusieurs romans toujours ancrés dans la littérature imaginaire (science-fiction, fantastique, thriller).<br>
+          Ses thèmes de prédilection : l'écologie, les énigmes scientifiques, l'aventure, les voyages. Il a effectué ses études à Rennes,
+          sa ville natale, puis suivi des cursus universitaires en physique et biologie,
+          avant d'obtenir un DEUG d'histoire-géographie et une maîtrise d'information-communication.</p>
+        </div>
       </div>
 
     </div>
@@ -108,7 +151,7 @@ $(document).ready(function() {
 
   <script>
   $(document).ready( function () {
-    $('#myTable').DataTable({
+    $('#listEpisodes').DataTable({
       "pagingType": "simple",
       "bLengthChange": false,
       "searching": false,

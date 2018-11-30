@@ -122,7 +122,7 @@ a{
   font-family: 'Archivo Narrow', sans-serif;
   display: block;
   margin: 0 auto;
-  margin-top: 75px;
+  margin-top: 20px;
 }
 
 .texteLogin{
@@ -132,6 +132,49 @@ a{
   color: #DA3351;
   margin-top: 15px;
   margin-bottom: 20px;
+}
+
+.linkUser{
+  background: ghostwhite;
+  border-right: 1px solid;
+  width: 50%;
+  margin-bottom: 20px;
+  padding: 0;
+  top: 0;
+  left: 0;
+  height: auto;
+  cursor: pointer;
+}
+.noBorder{
+  border: none;
+}
+
+.textLoginRegistration{
+  text-align: center;
+  font-size: 20px;
+}
+
+
+/* Registration */
+
+#divRegistration{
+  display: none;
+  width: auto;
+  position: absolute;
+  top: 400px;
+  left: calc(50% - 514px /2);
+  padding: 25px;
+  background-color: rgb(255,255,255, 0.5);
+}
+#divRegistration button{
+  background: #DA3351;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-family: 'Archivo Narrow', sans-serif;
+  display: block;
+  margin: 0 auto;
+  margin-top: 20px;
 }
 
 /* Section */

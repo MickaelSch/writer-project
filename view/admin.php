@@ -57,7 +57,7 @@
     </div>
 
     <div id="update" class="tabcontent">
-
+      <p class="titleTab">Gestion des épisodes</p>
       <div class="col-md-12">
         <?php
         foreach ($episodes as $episode) {
@@ -75,7 +75,7 @@
               <tbody>
 
                 <tr>
-                  <td><p class="title_episode">Episode 1 : <span class="colorRed"><?php echo $episode["title"]; ?></span></p></td>
+                  <td><p class="title_episode"><span class="colorRed"><?php echo $episode["title"]; ?></span></p></td>
                   <td><?php echo substr($episode["text_episode"], 0, 500).' ...';?></td>
                   <td>
                     <p><button data-toggle="modal" data-target=".bd-example-modal-lg" onclick="displayUpdateEpisode(<?php echo $episode["id"]; ?>)" type="button" class="buttonEditEpisode"><i class="fa fa-indent" aria-hidden="true"></i> Modifier</button> <button onclick="deleteEpisode(<?php echo $episode["id"]; ?>);" class="buttonEditEpisode" type="button"><i class="fa fa-trash" aria-hidden="true"></i> Supprimer</button></p>
