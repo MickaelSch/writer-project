@@ -1,5 +1,6 @@
 <?php
 
+require("./manager/TokenManager.php");
 require("./model/UserModel.php");
 
 class UserController{
@@ -7,18 +8,21 @@ class UserController{
   public static function signIn($data) {
 
     $userModel = new UserModel();
-    $result = $userModel->signIn($data['pseudo']);
+    $result = $userModel->readByPseudo($data['pseudoSignIn']);
 
 
-    $isPasswordCorrect = password_verify($data['pass'], $result['pass']);
+    $isPasswordCorrect = password_verify($data['passSignIn'], $result['pass']);
 
     if ($isPasswordCorrect)
     {
-      return true;
+      $token = TokenManager::create($result['id']);
     }
     else
     {
-      return false;
+      return [
+        "error" => true,
+        "error_message" => "Identifiant ou mot de passe incorrect"
+      ];
     }
   }
 
@@ -48,9 +52,12 @@ class UserController{
       ];
     }
 
-    $userModel = new UserModel();
-    $result = $userModel->signIn();
+    $pass_hash = password_hash($data['passSignUp'], PASSWORD_DEFAULT);
+    $user_registered = date("d/m/Y");
 
+    $userModel = new UserModel();
+    $result = $userModel->create($data['pseudoSignUp'], $data['emailSignUp'], $pass_hash, $user_registered);
+    return true;
   }
 
 

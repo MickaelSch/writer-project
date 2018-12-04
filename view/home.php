@@ -24,6 +24,7 @@
         <input class="form-control input-sm" type="text" id="passSignIn" placeholder="Votre mot de passe">
       </div>
     </div>
+    <div class="alert alert-danger signInError" role="alert"></div>
     <button onclick="signIn()" type="button" name="button">Valider</button>
   </div>
 
@@ -54,7 +55,9 @@
         <input class="form-control input-sm" type="text" id="passConfirmSignUp" placeholder="Confirmer mot de passe">
       </div>
     </div>
-    <button id="signUp" type="button" name="button">Valider</button>
+    <div class="alert alert-success signUpSuccess" role="alert"></div>
+    <div class="alert alert-danger signUpError" role="alert"></div>
+    <button onclick="signUp();" id="signUp" type="button" name="button">Valider</button>
   </div>
 
 

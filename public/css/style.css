@@ -32,6 +32,11 @@ a{
   background-repeat: no-repeat;
 }
 
+.boxConnection{
+  float: right;
+  margin: 15px 45px;
+}
+
 /*  Home */
 
 .title_acc{
@@ -176,6 +181,12 @@ a{
   display: block;
   margin: 0 auto;
   margin-top: 20px;
+}
+
+.signUpSuccess, .signUpError, .signInError{
+  display: none;
+  font-weight: bold;
+  margin-top: 10px;
 }
 
 /* Section */
