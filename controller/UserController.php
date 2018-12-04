@@ -16,6 +16,7 @@ class UserController{
     if ($isPasswordCorrect)
     {
       $token = TokenManager::create($result['id']);
+      return true;
     }
     else
     {

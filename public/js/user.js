@@ -14,7 +14,7 @@ function signIn(){
         $(".signInError").css("display", "block");
         $(".signInError").html(data.error_message);
       }else{
-
+        return true;
       }
 
     },

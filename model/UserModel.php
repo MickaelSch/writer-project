@@ -4,7 +4,7 @@ class UserModel{
 
 public function read($id){
 
-  $db = $this-dbConnect();
+  $db = $this->dbConnect();
   $request = $db->prepare("SELECT * FROM user WHERE id = :id");
   $request->execute(array(
     "id" => $id

@@ -1,6 +1,7 @@
 <?php
 
 require("./controller/EpisodeController.php");
+require("./model/UserModel.php");
 require("./manager/TokenManager.php");
 
 
@@ -12,7 +13,7 @@ class MainController{
   }
 
   public static function showAdminPage(){
-    self::verifyToken();
+    $user = self::verifyToken();
     $episodes = EpisodeController::getAll();
     require("./view/admin.php");
   }
@@ -24,8 +25,10 @@ class MainController{
       header("Location: ../auth.php");
       return false;
     }
-    
-    return $user_id;
+
+    $userModel = new UserModel();    
+    $user = $userModel->read($user_id);
+    return $user;
 
   }
 

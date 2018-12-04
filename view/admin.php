@@ -2,7 +2,7 @@
 
 <div id="acc">
 	<div class="boxConnection">
-		<p>Vous êtes connecté : <span style="color: #30f451; font-weight: bold">MickaelSch</span> - <a href="#">Changer le mot de passe</a> - <a href="#">Deconnexion</a></p>
+		<p>Vous êtes connecté : <span style="color: #30f451; font-weight: bold"><?php echo $user["pseudo"]; ?></span> - <a href="#">Changer le mot de passe</a> - <a href="#">Deconnexion</a></p>
 	</div>
 
 	<div class="title_acc" >
