@@ -7,6 +7,7 @@ if (isset($_GET['page'])) {
   switch ($_GET['page']) {
     case 'home':
       MainController::showHomePage();
+      MainController::showCommentHomePage();
       break;
     case 'admin':
       MainController::showAdminPage();

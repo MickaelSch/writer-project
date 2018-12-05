@@ -1,6 +1,7 @@
 <?php
 
 require("./controller/EpisodeController.php");
+require("./controller/CommentController.php");
 require("./model/UserModel.php");
 require("./manager/TokenManager.php");
 
@@ -9,7 +10,9 @@ class MainController{
 
   public static function showHomePage(){
     $episodes = EpisodeController::getAll();
+    $comments = CommentController::readAll();
     require("./view/home.php");
+
   }
 
   public static function showAdminPage(){
@@ -26,7 +29,7 @@ class MainController{
       return false;
     }
 
-    $userModel = new UserModel();    
+    $userModel = new UserModel();
     $user = $userModel->read($user_id);
     return $user;
 

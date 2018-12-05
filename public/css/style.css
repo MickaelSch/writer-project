@@ -74,40 +74,7 @@ a{
   margin-bottom: 20px;
 }
 
-.commentIcon{
-  color: #DA3351;
-  margin-right: 5px;
-}
-.commentText{
-  text-align: right;
-  cursor: pointer;
-}
 
-.commentBox{
-  height: auto;
-  border: 1px solid #ECECEC;
-  margin-bottom: 40px;
-}
-
-.comment{
-  font-family: 'Archivo Narrow', sans-serif;
-  background: #ECECEC;
-  padding: 10px 20px;
-  margin: -25px 25px;
-}
-.addComment{
-  width: 100%;
-  margin: 30px;
-}
-
-.autorComment{
-  color: #DA3351;
-  font-size: 17px;
-}
-.textComment{
-  margin-left: 20px;
-  margin-top: -5px;
-}
 
 /* Login */
 
@@ -292,6 +259,61 @@ padding-top: 30px;
   text-align: center;
   margin: 10px;
   font-size: 25px;
+}
+
+/* Comments */
+
+.commentIcon{
+  color: #DA3351;
+  margin-right: 5px;
+}
+.commentText{
+  text-align: right;
+  cursor: pointer;
+}
+
+.commentBox{
+  height: auto;
+  border: 1px solid #ECECEC;
+}
+
+.comment{
+  font-family: 'Archivo Narrow', sans-serif;
+  background: #ECECEC;
+  padding: 10px 20px;
+  margin: 10px;
+}
+.addComment{
+  width: 100%;
+  margin: 5px 20px;
+}
+
+.autorComment{
+  color: #DA3351;
+  font-size: 17px;
+}
+.textComment{
+  margin-left: 20px;
+  margin-top: -5px;
+}
+
+.newComment{
+  display: none;
+  font-family: 'Archivo Narrow', sans-serif;
+  background: #ECECEC;
+  padding: 10px 20px;
+  margin: 10px;
+}
+
+
+.addCommentButton{
+  background: #DA3351;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-family: 'Archivo Narrow', sans-serif;
+  display: block;
+  margin: 0 auto;
 }
 
 

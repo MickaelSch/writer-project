@@ -82,30 +82,44 @@
       </thead>
       <tbody>
         <?php
-
         foreach ($episodes as $episode) {
-
           ?>
           <tr>
             <td><p class="title_episode"><span class="colorRed"><?php echo $episode["title"]; ?></span></p></td>
-            <td style="padding: 10px 80px;"><?php echo $episode["text_episode"]; ?></td>
+            <td style="padding: 10px 80px;"><?php echo $episode["text_episode"]; ?>
+              <p class="id_episode" style="display: none"><?php echo $episode["id"]; ?></p>
+            </td>
             <td><p id="comment" class="commentText comments"><i class="fa fa-comments commentIcon" aria-hidden="true"></i>Commentaires</p></td>
             <td>
-              <div style="display: none" class="commentBox">
+              <div class="commentBox">
                 <div class="addComment">
-                  <textarea name="name" rows="3" cols="140" placeholder="Ecrivez votre commentaire ..."></textarea>
+                  <textarea class="content" name="name" rows="3" cols="140" placeholder="Ecrivez votre commentaire ..."></textarea>
                 </div>
-                <div class="comment">
-                  <p class="autorComment">Mickael Schimpf - 15/11/2018</p>
-                  <p class="textComment">Très bon épisode </p>
+                <button class="addCommentButton" type="button" name="button">Ajouter</button>
+                <?php
+                foreach ($comments as $comment) {
+                  for ($i= $episode["id"]; $i === $comment["id_episode"]; $i++) {
+
+                    ?>
+                    <div class="comment">
+                      <p class="autorComment">Mickael Schimpf - <?php echo date('d-m-Y', strtotime($comment["date"])); ?></p>
+                      <p class="textComment"><?php echo $comment["content"]; ?></p>
+                    </div>
+                    <?php
+                  };
+                };
+                ?>
+                <div class="newComment">
+                  <p class="autorComment">Mickael Schimpf - <span class="date"></span></p>
+                  <p class="textComment"></p>
                 </div>
               </div>
             </td>
-            <?php
-          };
-          ?>
-        </tr>
 
+          </tr>
+          <?php
+        };
+        ?>
       </tbody>
     </table>
 
