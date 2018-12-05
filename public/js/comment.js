@@ -35,6 +35,7 @@ $(".addCommentButton").click(function(){
     {
       action : "Comment:create",
       id_episode : $(".id_episode").text(),
+      pseudo : $(".pseudoInput").val(),
       content : $(".content").val()
     },
 
@@ -44,6 +45,29 @@ $(".addCommentButton").click(function(){
       if(data.create){
         $(".newComment").css("display", "block");
         $(".newComment .textComment").html(data.content);
+      }else{
+
+      }
+    },
+    "text",
+  );
+
+});
+
+$(".reportComment").click(function(){
+  console.log($(".idComment").text());
+  $.post(
+    "./ajax",
+    {
+      action : "Comment:reportComment",
+      id : $(".idComment").text()
+    },
+
+    function(data){
+      data = JSON.parse(data);
+      console.log(data);
+      if(data){
+        console.log(data);
       }else{
 
       }

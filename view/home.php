@@ -93,6 +93,7 @@
             <td>
               <div class="commentBox">
                 <div class="addComment">
+                    <input class="form-control input-sm pseudoInput" type="text" placeholder="Votre pseudo">
                   <textarea class="content" name="name" rows="3" cols="140" placeholder="Ecrivez votre commentaire ..."></textarea>
                 </div>
                 <button class="addCommentButton" type="button" name="button">Ajouter</button>
@@ -102,8 +103,10 @@
 
                     ?>
                     <div class="comment">
-                      <p class="autorComment">Mickael Schimpf - <?php echo date('d-m-Y', strtotime($comment["date"])); ?></p>
+                      <p class="idComment" style="display: none;"><?php echo $comment["id"]; ?></p>
+                      <p class="autorComment"><?php echo $comment["pseudo"]; ?> - <?php echo date('d-m-Y', strtotime($comment["date"])); ?></p>
                       <p class="textComment"><?php echo $comment["content"]; ?></p>
+                      <p class="reportComment"><i class="fa fa-exclamation-circle" aria-hidden="true"></i> Signaler le commentaire</p>
                     </div>
                     <?php
                   };

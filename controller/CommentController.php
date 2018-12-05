@@ -10,11 +10,19 @@ class CommentController{
     $date = date("d/m/Y");
 
     $comment = new CommentModel();
-    $create = $comment->create($data["content"], $data["id_episode"], $date);
+    $create = $comment->create($data["content"], $data["id_episode"], $data["pseudo"], $date);
     return [
       "create" => true,
       "content" => $data["content"]
     ];
+
+  }
+
+  public static function reportComment($data){
+
+    $comment = new CommentModel();
+    $report = $comment->reportComment($data["id"]);
+    return true;
 
   }
 

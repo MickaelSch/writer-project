@@ -263,6 +263,11 @@ padding-top: 30px;
 
 /* Comments */
 
+textarea{
+  border-radius: 0.25rem;
+  padding: 0.375rem 0.75rem;
+}
+
 .commentIcon{
   color: #DA3351;
   margin-right: 5px;
@@ -316,6 +321,16 @@ padding-top: 30px;
   margin: 0 auto;
 }
 
+.pseudoInput{
+  width: 50%;
+  margin-bottom: 15px;
+}
+
+.reportComment{
+  font-size: 15px;
+  color: red;
+  cursor: pointer;
+}
 
 /* Style the buttons that are used to open the tab content */
 .tab button {
