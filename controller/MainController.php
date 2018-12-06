@@ -20,12 +20,13 @@ class MainController{
     $episodes = EpisodeController::getAll();
     require("./view/admin.php");
   }
+  
 
   private static function verifyToken(){
     $user_id = TokenManager::verify();
     if(!$user_id)
     {
-      header("Location: ../auth.php");
+      header("Location: ./?page=home");
       return false;
     }
 

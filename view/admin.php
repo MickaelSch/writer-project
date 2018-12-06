@@ -2,7 +2,7 @@
 
 <div id="acc">
 	<div class="boxConnection">
-		<p>Vous êtes connecté : <span style="color: #30f451; font-weight: bold"><?php echo $user["pseudo"]; ?></span> - <a href="#">Changer le mot de passe</a> - <a href="#">Deconnexion</a></p>
+		<p>Vous êtes connecté : <span style="color: #30f451; font-weight: bold"><?php echo $user["pseudo"]; ?></span> - <a href="#">Changer le mot de passe</a> - <a id="logOut">Deconnexion</a></p>
 	</div>
 
 	<div class="title_acc" >
@@ -19,6 +19,7 @@
 		<div class="tab">
 			<button class="tablinks" onclick="changeTabs(event, 'create')" id="defaultOpen">Création épisode</button>
 			<button class="tablinks" onclick="changeTabs(event, 'update')" >Gestion des épisodes</button>
+			<button class="tablinks" onclick="changeTabs(event, 'comment')" >Gestion des commentaires</button>
 		</div>
 
 		<div id="create" class="tabcontent">
@@ -79,6 +80,14 @@
 				?>
 			</div>
 		</div>
+
+		<div id="comment" class="tabcontent">
+			<p class="titleTab">Gestion des commentaires</p>
+
+
+		</div>
+
+
 	</div>
 </div>
 

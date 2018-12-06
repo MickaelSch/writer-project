@@ -61,6 +61,15 @@ class UserController{
     return true;
   }
 
+  public static function logOut(){
+    unset($_COOKIE["session_token"]);
+    unset($_COOKIE["session_informations"]);
+    setcookie('session_token', null, -1);
+    setcookie('session_informations', null, -1);
+    return true;
+
+  }
+
 
 
 }

@@ -24,6 +24,11 @@ a{
   color: #F75930;
 }
 
+#mainNotify{
+  position: absolute;
+  margin: 15px;
+}
+
 #acc{
   background-image: url(../images/bg1.jpeg);
   width: 100%;

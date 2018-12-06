@@ -11,3 +11,13 @@ function paginationEpisodes(id){
 }
 
 paginationEpisodes('#listEpisodes');
+
+
+function showNotif(){
+
+
+
+
+}
+
+showNotif();

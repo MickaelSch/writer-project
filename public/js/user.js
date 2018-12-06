@@ -14,7 +14,7 @@ function signIn(){
         $(".signInError").css("display", "block");
         $(".signInError").html(data.error_message);
       }else{
-        return true;
+        window.location.replace("./?page=admin");
       }
 
     },
@@ -54,6 +54,27 @@ function signUp(){
 
 }
 
+function logOut(){
+  $("#logOut").click(function(){
+    console.log("f");
+    $.post(
+      "./ajax.php",
+      {
+        action : "User:logOut"
+      },
+
+      function(data){
+        if(data){
+          window.location.replace("./?page=home");
+        }else{
+
+        }
+      },
+      "text",
+    );
+  });
+}
+
 $(function() {
 
     $('.login-link').click(function(e) {
@@ -72,3 +93,5 @@ $(function() {
 	});
 
 });
+
+logOut();

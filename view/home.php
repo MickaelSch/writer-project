@@ -93,7 +93,7 @@
             <td>
               <div class="commentBox">
                 <div class="addComment">
-                    <input class="form-control input-sm pseudoInput" type="text" placeholder="Votre pseudo">
+                  <input class="form-control input-sm pseudoInput" type="text" placeholder="Votre pseudo">
                   <textarea class="content" name="name" rows="3" cols="140" placeholder="Ecrivez votre commentaire ..."></textarea>
                 </div>
                 <button class="addCommentButton" type="button" name="button">Ajouter</button>
@@ -149,6 +149,7 @@
     </div>
 
   </div>
+
 
 
 
