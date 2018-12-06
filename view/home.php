@@ -103,18 +103,17 @@
 
                     ?>
                     <div class="comment">
-                      <p class="idComment" style="display: none;"><?php echo $comment["id"]; ?></p>
                       <p class="autorComment"><?php echo $comment["pseudo"]; ?> - <?php echo date('d-m-Y', strtotime($comment["date"])); ?></p>
                       <p class="textComment"><?php echo $comment["content"]; ?></p>
-                      <p class="reportComment"><i class="fa fa-exclamation-circle" aria-hidden="true"></i> Signaler le commentaire</p>
+                      <p data-episode-id="<?php echo $comment["id"]; ?>" class="reportComment"><i class="fa fa-exclamation-circle" aria-hidden="true"></i> Signaler le commentaire</p>
                     </div>
                     <?php
                   };
                 };
                 ?>
                 <div class="newComment">
-                  <p class="autorComment">Mickael Schimpf - <span class="date"></span></p>
-                  <p class="textComment"></p>
+                  <p class="autorComment"><span class="newCommentPseudo"></span> - <span class="newCommentDate"></span></p>
+                  <p class="newTextComment"></p>
                 </div>
               </div>
             </td>

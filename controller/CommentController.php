@@ -13,7 +13,9 @@ class CommentController{
     $create = $comment->create($data["content"], $data["id_episode"], $data["pseudo"], $date);
     return [
       "create" => true,
-      "content" => $data["content"]
+      "content" => $data["content"],
+      "date" => $date,
+      "pseudo" => $data["pseudo"]
     ];
 
   }

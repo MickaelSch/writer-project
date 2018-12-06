@@ -29,6 +29,7 @@ $(document).ready(function() {
   });
 });
 
+function create(){
 $(".addCommentButton").click(function(){
   $.post(
     "./ajax",
@@ -44,7 +45,10 @@ $(".addCommentButton").click(function(){
       console.log(data);
       if(data.create){
         $(".newComment").css("display", "block");
-        $(".newComment .textComment").html(data.content);
+        $(".newComment .newTextComment").html(data.content);
+        $(".newComment .newCommentDate").html(data.date);
+        $(".newComment .newCommentPseudo").html(data.pseudo);
+
       }else{
 
       }
@@ -53,14 +57,17 @@ $(".addCommentButton").click(function(){
   );
 
 });
+}
 
-$(".reportComment").click(function(){
-  console.log($(".idComment").text());
+function report(){
+$(".reportComment").click(function(e){
+  var id_episode = e.target.getAttribute("data-episode-id");
+  console.dir(id_episode)
   $.post(
     "./ajax",
     {
       action : "Comment:reportComment",
-      id : $(".idComment").text()
+      id : id_episode
     },
 
     function(data){
@@ -76,3 +83,7 @@ $(".reportComment").click(function(){
   );
 
 });
+}
+
+create();
+report();
