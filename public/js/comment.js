@@ -59,6 +59,28 @@ $(".addCommentButton").click(function(){
 });
 }
 
+function deleteComment(){
+  $(".deleteComment").click(function(e){
+    var id_comment = e.target.getAttribute("data-comment-id");
+    $.post(
+      "./ajax.php",
+      {
+        action : "Comment:delete",
+        id : id_comment
+      },
+
+      function(data){
+        if(data){
+          $("div[data-comment-id ="+id_comment+"]").css("display", "none");
+        }else{
+
+        }
+      },
+      "text",
+    );
+  });
+}
+
 function report(){
 $(".reportComment").click(function(e){
   var id_episode = e.target.getAttribute("data-episode-id");
@@ -87,3 +109,4 @@ $(".reportComment").click(function(e){
 
 create();
 report();
+deleteComment();

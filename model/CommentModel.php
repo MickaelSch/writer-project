@@ -27,6 +27,19 @@ public function readAll(){
 
 }
 
+
+public function delete($id){
+
+  $db = $this->dbConnect();
+  $request = $db->prepare("DELETE FROM comment WHERE id = :id");
+  $request->execute(array(
+    "id" => $id
+  ));
+  return true;
+
+
+}
+
 public function reportComment($id){
 
   $db = $this->dbConnect();

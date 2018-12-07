@@ -2,7 +2,7 @@
 
 <div id="acc">
 	<div class="boxConnection">
-		<p>Vous êtes connecté : <span style="color: #30f451; font-weight: bold"><?php echo $user["pseudo"]; ?></span> - <a href="#">Changer le mot de passe</a> - <a id="logOut">Deconnexion</a></p>
+		<p>Vous êtes connecté : <span style="color: #30f451; font-weight: bold"><?php echo $user["pseudo"]; ?></span> - <a href="#">Changer le mot de passe</a> - <a href="#" id="logOut">Deconnexion</a></p>
 	</div>
 
 	<div class="title_acc" >
@@ -83,7 +83,30 @@
 
 		<div id="comment" class="tabcontent">
 			<p class="titleTab">Gestion des commentaires</p>
-
+			<table class="table table-hover">
+				<thead>
+					<tr>
+						<th>Pseudo</th>
+						<th>Commentaire</th>
+						<th>Signalement</th>
+						<th>Actions</th>
+					</tr>
+				</thead>
+				<tbody>
+					<?php
+					foreach ($comments as $comment) {
+					 ?>
+					<tr>
+						<td><?php echo $comment["pseudo"]; ?></td>
+						<td><?php echo $comment["content"]; ?></td>
+						<td><?php echo $comment["report"]; ?></td>
+						<td><i data-comment-id="<?php echo $comment["id"]; ?>"  class="fa fa-trash deleteComment" aria-hidden="true"></i> - <i class="fa fa-check" aria-hidden="true"></i></td>
+					</tr>
+					<?php
+				};
+					 ?>
+				</tbody>
+			</table>
 
 		</div>
 

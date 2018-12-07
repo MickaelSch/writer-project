@@ -379,12 +379,20 @@ table.dataTable.no-footer{
   border-bottom: 0px !important;
 }
 
-th
+#listEpisodes th
 {display: none;}
-tr
+#listEpisodes tr
 {display: flex; flex-direction: column;}
-td
+#listEpisodes td
 {display: flex; flex-direction: column;}
+
+#update th
+{display: none;}
+#update tr
+{display: flex; flex-direction: column;}
+#update td
+{display: flex; flex-direction: column;}
+
 
 
 /* Mobile */

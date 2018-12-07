@@ -1,6 +1,17 @@
 <?php ob_start(); ?>
 
 <div id="acc">
+  <?php
+  if (isset($_COOKIE["session_token"])) {
+    ?>
+    <div class="boxConnection">
+      <p>Vous êtes connecté : <span style="color: #30f451; font-weight: bold"><?php echo $user["pseudo"]; ?></span> - <a href="#">Changer le mot de passe</a> - <a id="logOut">Deconnexion</a></p>
+    </div>
+    <?php
+  };
+  ?>
+
+
   <div class="title_acc" >
     <h1 style="font-size: 50px">Billet simple pour l'Alaska</h1>
   </div>
@@ -21,7 +32,7 @@
         <input class="form-control input-sm" type="text" id="pseudoSignIn" placeholder="Votre pseudo">
       </div>
       <div class="col-md-6">
-        <input class="form-control input-sm" type="text" id="passSignIn" placeholder="Votre mot de passe">
+        <input class="form-control input-sm" type="password" id="passSignIn" placeholder="Votre mot de passe">
       </div>
     </div>
     <div class="alert alert-danger signInError" role="alert"></div>
@@ -49,10 +60,10 @@
     </div>
     <div style="margin-top: 20px" class="row">
       <div class="col-md-6">
-        <input class="form-control input-sm" type="text" id="passSignUp" placeholder="Votre mot de passe">
+        <input class="form-control input-sm" type="password" id="passSignUp" placeholder="Votre mot de passe">
       </div>
       <div class="col-md-6">
-        <input class="form-control input-sm" type="text" id="passConfirmSignUp" placeholder="Confirmer mot de passe">
+        <input class="form-control input-sm" type="password" id="passConfirmSignUp" placeholder="Confirmer mot de passe">
       </div>
     </div>
     <div class="alert alert-success signUpSuccess" role="alert"></div>
@@ -91,9 +102,9 @@
             </td>
             <td><p id="comment" class="commentText comments"><i class="fa fa-comments commentIcon" aria-hidden="true"></i>Commentaires</p></td>
             <td>
-              <div class="commentBox">
+              <div style="display: none" class="commentBox">
                 <div class="addComment">
-                  <input class="form-control input-sm pseudoInput" type="text" placeholder="Votre pseudo">
+                  <!-- <input class="form-control input-sm pseudoInput" type="text" placeholder="Votre pseudo" value="<?php echo $user["pseudo"]; ?>"> -->
                   <textarea class="content" name="name" rows="3" cols="140" placeholder="Ecrivez votre commentaire ..."></textarea>
                 </div>
                 <button class="addCommentButton" type="button" name="button">Ajouter</button>
