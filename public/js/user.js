@@ -1,4 +1,5 @@
 function signIn(){
+  $("#signInButton").click(function(){
   $.post(
     "./ajax.php",
     {
@@ -20,11 +21,11 @@ function signIn(){
     },
     "text",
   );
-
-
+});
 }
 
 function signUp(){
+  $(".signUpButton").click(function(){
   $.post(
     "./ajax.php",
     {
@@ -50,8 +51,7 @@ function signUp(){
     },
     "text",
   );
-
-
+});
 }
 
 function logOut(){
@@ -94,4 +94,6 @@ $(function() {
 
 });
 
+signIn();
+signUp();
 logOut();

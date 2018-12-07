@@ -51,6 +51,15 @@
 			<div class="col-md-12">
 				<?php
 				foreach ($episodes as $episode) {
+					$string = $episode["text_episode"];
+					$lg_max = 500;
+
+					if (strlen($string) > $lg_max)
+					{
+						$string = substr($string, 0, $lg_max);
+						$last_space = strrpos($string, " ");
+						$epidodeSubstr = substr($string, 0, $last_space)."...";
+					}
 					?>
 					<div id="<?php echo $episode["id"]; ?>" class="seanceBoxModification">
 						<table id="managementEpisodes">
@@ -65,7 +74,7 @@
 
 								<tr>
 									<td><p class="title_episode"><span class="colorRed"><?php echo $episode["title"]; ?></span></p></td>
-									<td><?php echo substr($episode["text_episode"], 0, 500).' ...';?></td>
+									<td><?php echo $epidodeSubstr;?></td>
 									<td>
 										<p><button data-toggle="modal" data-target=".bd-example-modal-lg" onclick="displayUpdateEpisode(<?php echo $episode["id"]; ?>)" type="button" class="buttonEditEpisode"><i class="fa fa-indent" aria-hidden="true"></i> Modifier</button> <button onclick="deleteEpisode(<?php echo $episode["id"]; ?>);" class="buttonEditEpisode" type="button"><i class="fa fa-trash" aria-hidden="true"></i> Supprimer</button></p>
 									</td>
@@ -95,16 +104,16 @@
 				<tbody>
 					<?php
 					foreach ($comments as $comment) {
-					 ?>
-					<tr>
-						<td><?php echo $comment["pseudo"]; ?></td>
-						<td><?php echo $comment["content"]; ?></td>
-						<td><?php echo $comment["report"]; ?></td>
-						<td><i data-comment-id="<?php echo $comment["id"]; ?>"  class="fa fa-trash deleteComment" aria-hidden="true"></i> - <i class="fa fa-check" aria-hidden="true"></i></td>
-					</tr>
-					<?php
-				};
-					 ?>
+						?>
+						<tr>
+							<td><?php echo $comment["pseudo"]; ?></td>
+							<td><?php echo $comment["content"]; ?></td>
+							<td><?php echo $comment["report"]; ?></td>
+							<td><i data-comment-id="<?php echo $comment["id"]; ?>"  class="fa fa-trash deleteComment" aria-hidden="true"></i> - <i class="fa fa-check" aria-hidden="true"></i></td>
+						</tr>
+						<?php
+					};
+					?>
 				</tbody>
 			</table>
 

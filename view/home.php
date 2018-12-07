@@ -19,11 +19,11 @@
   <div id="divLogin" class="active">
     <div style="display: flex">
 
-      <div class="linkUser">
-        <p class="texteLogin login-link">Connexion</p>
+      <div class="linkUser login-link">
+        <p class="texteLogin">Connexion</p>
       </div>
-      <div class="linkUser noBorder">
-        <p class="texteLogin registration-link">Inscription</p>
+      <div class="linkUser registration-link noBorder">
+        <p class="texteLogin">Inscription</p>
       </div>
     </div>
     <p class="textLoginRegistration">Espace membre</p>
@@ -36,7 +36,7 @@
       </div>
     </div>
     <div class="alert alert-danger signInError" role="alert"></div>
-    <button onclick="signIn()" type="button" name="button">Valider</button>
+    <button id="signInButton" type="button" name="button">Valider</button>
   </div>
 
   <div id="divRegistration">
@@ -68,7 +68,7 @@
     </div>
     <div class="alert alert-success signUpSuccess" role="alert"></div>
     <div class="alert alert-danger signUpError" role="alert"></div>
-    <button onclick="signUp();" id="signUp" type="button" name="button">Valider</button>
+    <button id="signUp" class="signUpButton" type="button" name="button">Valider</button>
   </div>
 
 
@@ -104,7 +104,7 @@
             <td>
               <div style="display: none" class="commentBox">
                 <div class="addComment">
-                  <!-- <input class="form-control input-sm pseudoInput" type="text" placeholder="Votre pseudo" value="<?php echo $user["pseudo"]; ?>"> -->
+                  <input class="form-control input-sm pseudoInput" type="text" placeholder="Votre pseudo">
                   <textarea class="content" name="name" rows="3" cols="140" placeholder="Ecrivez votre commentaire ..."></textarea>
                 </div>
                 <button class="addCommentButton" type="button" name="button">Ajouter</button>
